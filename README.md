@@ -1,1 +1,1 @@
-# Linux-Automation-Script
+This repository contains a collection of Bash scripts for automating repetitive system administration and development tasks. Each script is designed to streamline complex installations and other routine operations, saving time and reducing errors.
