@@ -41,4 +41,4 @@ print_status "Step 2: Adding the current user '$USER' to the 'docker' group."
 
 print_status "Docker setup finished successfully."
 
-echo "usermod -aG docker "$USER""
+sudo usermod -aG docker "$USER"
