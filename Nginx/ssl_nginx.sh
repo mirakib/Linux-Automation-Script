@@ -1,18 +1,24 @@
 #!/bin/bash
 set -e
 
-DOMAIN="app.domain.tech"
-EMAIL="you@example.com"
-WEBROOT="/var/www/$DOMAIN"
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 <domain> <email>"
+  exit 1
+fi
+
+DOMAIN=$1
+EMAIL=$2
+
+echo "Enabling SSL for $DOMAIN"
 
 sudo apt update
 sudo apt install -y certbot python3-certbot-nginx
 
 sudo certbot --nginx \
-  -d $DOMAIN \
+  -d "$DOMAIN" \
   --non-interactive \
   --agree-tos \
-  -m $EMAIL \
+  -m "$EMAIL" \
   --redirect
 
 sudo nginx -t
