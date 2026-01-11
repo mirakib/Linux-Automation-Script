@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 
-DOMAIN="app.mirakib.tech"
-EMAIL="you@example.com"
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 <domain> <email>"
+  exit 1
+fi
+
+DOMAIN=$1
+EMAIL=$2
 WEBROOT="/var/www/$DOMAIN"
 
 sudo apt update
