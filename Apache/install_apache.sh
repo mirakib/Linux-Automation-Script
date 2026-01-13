@@ -9,3 +9,5 @@ systemctl start apache2
 if command -v ufw >/dev/null 2>&1; then
   ufw allow 'Apache Full'
 fi
+
+# FOR DEBIAN/UBUNTU LINUX 
